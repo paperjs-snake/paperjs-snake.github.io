@@ -12,9 +12,9 @@ window.onload = function() {
   }
 
 	// arrete le snake
-  function stopSnake() {
+  /*function stopSnake() {
   	clearInterval(timer);
-  }
+  }*/
 
 	// deplace snake
   function moveSnake() {
@@ -133,26 +133,25 @@ window.onload = function() {
         strokeWidth: 12,
         strokeCap: 'square'
       };
-
+			// nombre d'elements du snake au depart
       var size = 5;
+			// segments composant le snake
       var segments = path.segments;
-
       var startVec = [10, 1];
       var start = [];
       start[0] = paper.view.center.x;
       start[1] = paper.view.center.y;
 
-      var point = start;
       var direction = [0, 10];
       var newDirection = direction;
 
-      // start
+      // creation et position du snake de size elements
       var pos = [10, 0];
       for (var i = 0; i < size; i++) {
-        /*pos += start;*/
-        var mPoint = new paper.Point( start[0]+(i * pos[0]), start[1]+pos[1] );
+        var mPoint = new paper.Point(start[0] + (i * pos[0]), start[1] + pos[1]);
         path.add(mPoint);
       }
+			// creation de la bouffe
       var food = new paper.Path.Circle(new paper.Point(0, 0), 4);
       food.style = {
         fillColor: 'red'
