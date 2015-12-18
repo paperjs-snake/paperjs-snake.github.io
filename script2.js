@@ -74,7 +74,7 @@ window.onload = function() {
       paper.view.draw();
   }
 	// initialise le timer avec 500
-	var timer = setInterval(onTick, 500);
+	var timer = setInterval(onTick, 100);
 
 	// defini un tool
   var tool = new paper.Tool();
